@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Ops Hub
 
-## Getting Started
+Платформа AI-функций для малого бизнеса — единое место для чат-ботов, анализа документов, автономных агентов и автоматизаций.
 
-First, run the development server:
+## Возможности
+
+| Модуль | Описание |
+|--------|----------|
+| **AI Чат-бот** | LLM-чат-бот для поддержки клиентов 24/7, настраивается без кода |
+| **Документ Q&A** | Ответы на вопросы по загруженным PDF/Word-документам с ссылками на источник |
+| **AI Агенты** | Автономные многошаговые агенты для поиска, анализа и составления отчётов |
+| **Автоматизации** | Рабочие процессы по расписанию или событию с интеграцией через API |
+
+## Стек
+
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **UI Components**: shadcn/ui (Button, Card, Input)
+- **Linting**: ESLint
+
+## Быстрый старт
 
 ```bash
+# Установка зависимостей
+npm install
+
+# Запуск dev-сервера
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Откройте [http://localhost:3000](http://localhost:3000) в браузере.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Структура проекта
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── globals.css       # Глобальные стили + shadcn/ui переменные
+│   ├── layout.tsx        # Root layout
+│   └── page.tsx          # Главная страница (лендинг)
+├── components/
+│   └── ui/               # shadcn/ui компоненты
+│       ├── button.tsx
+│       ├── card.tsx
+│       └── input.tsx
+└── lib/
+    └── utils.ts          # Утилиты (cn)
+```
 
-## Learn More
+## Дорожная карта
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [ ] Аутентификация пользователей
+- [ ] Дашборд с метриками
+- [ ] Модуль чат-бота (интеграция с Claude API)
+- [ ] Загрузка и индексация документов (RAG)
+- [ ] Конструктор агентов
+- [ ] Визуальный редактор автоматизаций

@@ -1,65 +1,163 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+
+const features = [
+  {
+    icon: "💬",
+    title: "AI Чат-бот",
+    description:
+      "Умный чат-бот на базе LLM, который отвечает на вопросы клиентов 24/7. Легко настраивается под специфику вашего бизнеса без написания кода.",
+  },
+  {
+    icon: "📄",
+    title: "Документ Q&A",
+    description:
+      "Загружайте PDF, Word и другие документы — система мгновенно найдёт нужную информацию по вашему запросу с точными ссылками на источник.",
+  },
+  {
+    icon: "🤖",
+    title: "AI Агенты",
+    description:
+      "Автономные агенты, способные выполнять многошаговые задачи: поиск информации, анализ данных, составление отчётов без участия человека.",
+  },
+  {
+    icon: "⚡",
+    title: "Автоматизации",
+    description:
+      "Создавайте рабочие процессы, которые запускаются автоматически по расписанию или событию. Интеграция с вашими системами через API.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="min-h-screen bg-background">
+      {/* Header */}
+      <header className="border-b">
+        <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <span className="text-2xl font-bold">AI Ops Hub</span>
+          </div>
+          <nav className="hidden md:flex items-center gap-6 text-sm text-muted-foreground">
+            <a href="#features" className="hover:text-foreground transition-colors">Возможности</a>
+            <a href="#about" className="hover:text-foreground transition-colors">О платформе</a>
+            <a href="#cta" className="hover:text-foreground transition-colors">Начать</a>
+          </nav>
+          <Button size="sm">Попробовать бесплатно</Button>
+        </div>
+      </header>
+
+      {/* Hero */}
+      <section className="max-w-6xl mx-auto px-6 py-24 text-center">
+        <div className="inline-flex items-center gap-2 bg-muted rounded-full px-4 py-1.5 text-sm text-muted-foreground mb-6">
+          <span>🚀</span>
+          <span>AI-платформа для малого бизнеса</span>
+        </div>
+        <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 max-w-3xl mx-auto">
+          Автоматизируй бизнес с помощью&nbsp;
+          <span className="text-primary/70">искусственного интеллекта</span>
+        </h1>
+        <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
+          AI Ops Hub — единая платформа AI-инструментов для малого бизнеса.
+          Чат-боты, анализ документов, автономные агенты и автоматизации без сложных настроек.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button size="lg" className="px-8">
+            Начать бесплатно
+          </Button>
+          <Button size="lg" variant="outline" className="px-8">
+            Смотреть демо
+          </Button>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section id="features" className="max-w-6xl mx-auto px-6 pb-24">
+        <div className="text-center mb-14">
+          <h2 className="text-3xl font-bold mb-4">Всё что нужно — в одном месте</h2>
+          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+            Четыре ключевых модуля для автоматизации рутины и роста бизнеса
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {features.map((feature) => (
+            <Card key={feature.title} className="hover:shadow-md transition-shadow">
+              <CardHeader>
+                <div className="text-4xl mb-2">{feature.icon}</div>
+                <CardTitle className="text-lg">{feature.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-sm leading-relaxed">
+                  {feature.description}
+                </CardDescription>
+              </CardContent>
+            </Card>
+          ))}
         </div>
-      </main>
+      </section>
+
+      {/* About */}
+      <section id="about" className="bg-muted/40 border-y">
+        <div className="max-w-6xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-3xl font-bold mb-4">Почему AI Ops Hub?</h2>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Мы создали платформу специально для малого бизнеса: без сложных технических знаний,
+              без больших бюджетов. Настройте первого AI-агента за 10 минут и освободите время
+              для важного.
+            </p>
+            <ul className="space-y-3 text-sm">
+              {[
+                "Нет необходимости в технической команде",
+                "Готовые шаблоны для популярных сценариев",
+                "Безопасное хранение данных в России",
+                "Поддержка на русском языке",
+              ].map((item) => (
+                <li key={item} className="flex items-center gap-2">
+                  <span className="text-green-600">✓</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            {[
+              { value: "10 мин", label: "до первого агента" },
+              { value: "24/7", label: "работа без перерывов" },
+              { value: "4 модуля", label: "в одной платформе" },
+              { value: "0 кода", label: "требуется для старта" },
+            ].map((stat) => (
+              <Card key={stat.label} className="text-center p-6">
+                <div className="text-3xl font-bold mb-1">{stat.value}</div>
+                <div className="text-sm text-muted-foreground">{stat.label}</div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section id="cta" className="max-w-6xl mx-auto px-6 py-24 text-center">
+        <h2 className="text-3xl font-bold mb-4">Готовы автоматизировать бизнес?</h2>
+        <p className="text-muted-foreground mb-8 max-w-md mx-auto">
+          Оставьте email — мы пришлём инструкцию по быстрому старту и доступ к демо-среде.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+          <Input type="email" placeholder="ваш@email.ru" className="flex-1" />
+          <Button>Получить доступ</Button>
+        </div>
+        <p className="text-xs text-muted-foreground mt-3">
+          Бесплатно на 14 дней. Без привязки карты.
+        </p>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t">
+        <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+          <span className="font-semibold text-foreground">AI Ops Hub</span>
+          <span>© 2026 AI Ops Hub. Платформа AI-функций для малого бизнеса.</span>
+        </div>
+      </footer>
     </div>
   );
 }
