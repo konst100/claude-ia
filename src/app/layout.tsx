@@ -22,6 +22,7 @@ export const metadata: Metadata = {
   title: "AI Ops Hub — AI-платформа для малого бизнеса",
   description:
     "Чат-боты, анализ документов, автономные агенты и автоматизации без сложных настроек.",
+  robots: "noindex, nofollow",
 };
 
 export default function RootLayout({

@@ -1,22 +1,32 @@
-import { Input } from "@/components/ui/input";
+const LogoDiamond = () => (
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="var(--accent)" aria-hidden="true">
+    <polygon points="7,1 13,7 7,13 1,7" />
+  </svg>
+);
+
+const BadgeDot = () => (
+  <svg width="6" height="6" viewBox="0 0 6 6" fill="var(--accent)" aria-hidden="true">
+    <circle cx="3" cy="3" r="3" />
+  </svg>
+);
 
 const features = [
   {
     num: "01",
     icon: (
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M3 5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H7l-4 3V5z" />
         <path d="M7 9h6M7 12h4" />
       </svg>
     ),
     title: "AI Chatbot",
     description:
-      "Умный чат-бот на базе LLM отвечает на вопросы клиентов 24/7. Настраивается под специфику бизнеса без написания кода.",
+      "An LLM-powered chatbot that answers customer questions 24/7 — configurable to your business without writing code.",
   },
   {
     num: "02",
     icon: (
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M12 2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7l-5-5z" />
         <path d="M12 2v5h5M7 11h3m-3 3h6" />
         <circle cx="14.5" cy="15.5" r="1.5" />
@@ -25,45 +35,45 @@ const features = [
     ),
     title: "Document Q&A",
     description:
-      "Загружайте PDF и Word — система мгновенно найдёт нужную информацию с точными ссылками на источник.",
+      "Upload PDF and Word files — the system instantly finds relevant information with precise source references.",
   },
   {
     num: "03",
     icon: (
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <circle cx="10" cy="10" r="2.5" />
         <path d="M10 2v2M10 16v2M2 10h2M16 10h2M4.1 4.1l1.4 1.4M14.5 14.5l1.4 1.4M4.1 15.9l1.4-1.4M14.5 5.5l1.4-1.4" />
       </svg>
     ),
     title: "AI Agents",
     description:
-      "Автономные агенты для многошаговых задач: поиск информации, анализ данных, составление отчётов без участия человека.",
+      "Autonomous agents for multi-step tasks: research, data analysis, and report generation without human involvement.",
   },
   {
     num: "04",
     icon: (
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M11.5 2 4 11h7l-2.5 7L18 9h-7l2.5-7z" />
       </svg>
     ),
     title: "Automations",
     description:
-      "Рабочие процессы по расписанию или событию. Интеграция с вашими системами через API без технической команды.",
+      "Workflows triggered on schedule or by event. API integration with your existing systems — no technical team needed.",
   },
 ];
 
 const stats = [
-  { value: "10 min", label: "до первого агента" },
-  { value: "24/7", label: "работа без перерывов" },
-  { value: "4", label: "модуля в платформе" },
-  { value: "0", label: "строк кода для старта" },
+  { value: "10 min", label: "to first agent" },
+  { value: "24/7", label: "always running" },
+  { value: "4", label: "modules in one place" },
+  { value: "0", label: "lines of code to start" },
 ];
 
 const checks = [
-  "Нет необходимости в технической команде",
-  "Готовые шаблоны для популярных сценариев",
-  "Безопасное хранение данных",
-  "Поддержка на русском языке",
+  "No technical team required",
+  "Ready-made templates for common scenarios",
+  "Secure data storage",
+  "Full English support",
 ];
 
 export default function Home() {
@@ -77,7 +87,7 @@ export default function Home() {
       >
         <div className="max-w-5xl mx-auto px-6 h-[60px] flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span style={{ color: "var(--accent)", fontSize: "16px", lineHeight: 1 }}>◆</span>
+            <LogoDiamond />
             <span
               className="font-semibold text-[15px]"
               style={{ color: "var(--ink)", letterSpacing: "-0.01em" }}
@@ -95,9 +105,6 @@ export default function Home() {
             </a>
             <a href="#about" className="hover:text-[var(--ink)] transition-colors duration-150">
               About
-            </a>
-            <a href="#cta" className="hover:text-[var(--ink)] transition-colors duration-150">
-              Pricing
             </a>
           </nav>
 
@@ -121,7 +128,7 @@ export default function Home() {
             borderRadius: "999px",
           }}
         >
-          <span style={{ color: "var(--accent)", fontSize: "8px" }}>●</span>
+          <BadgeDot />
           v1.0 · beta
         </div>
 
@@ -148,8 +155,8 @@ export default function Home() {
           className="text-[17px] leading-relaxed mb-10 max-w-[480px] mx-auto"
           style={{ color: "var(--muted)" }}
         >
-          Единая платформа AI-инструментов для малого бизнеса. Чат-боты, анализ документов,
-          автономные агенты и автоматизации без сложных настроек.
+          A unified AI platform for small business. Chatbots, document analysis,
+          autonomous agents, and automations — without complex setup.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
@@ -197,10 +204,10 @@ export default function Home() {
               className="text-3xl font-semibold mb-3"
               style={{ color: "var(--ink)", letterSpacing: "-0.02em" }}
             >
-              Всё что нужно — в одном месте
+              Everything You Need — In One Place
             </h2>
             <p style={{ color: "var(--muted)" }}>
-              Четыре ключевых модуля для автоматизации рутины и роста бизнеса
+              Four key modules to automate routine work and grow your business
             </p>
           </div>
 
@@ -255,15 +262,14 @@ export default function Home() {
               className="text-3xl font-semibold mb-4"
               style={{ color: "var(--ink)", letterSpacing: "-0.02em" }}
             >
-              Почему AI Ops Hub?
+              Why AI Ops Hub?
             </h2>
             <p
               className="text-[15px] leading-relaxed mb-7"
               style={{ color: "var(--muted)" }}
             >
-              Платформа создана специально для малого бизнеса: без технической команды
-              и без больших бюджетов. Настройте первого AI-агента за 10 минут и освободите
-              время для важного.
+              Built specifically for small business — no technical team, no big budget.
+              Set up your first AI agent in 10 minutes and free up time for what matters.
             </p>
             <ul className="space-y-3">
               {checks.map((item) => (
@@ -312,32 +318,20 @@ export default function Home() {
             className="text-3xl font-semibold mb-3"
             style={{ color: "var(--ink)", letterSpacing: "-0.02em" }}
           >
-            Готовы автоматизировать бизнес?
+            View the Source Code
           </h2>
           <p className="mb-8 text-[15px]" style={{ color: "var(--muted)" }}>
-            Оставьте email — пришлём инструкцию по быстрому старту и доступ к демо-среде.
+            This is an open project — all code is available on GitHub.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-            <Input
-              type="email"
-              placeholder="ваш@email.ru"
-              className="flex-1"
-              style={{
-                background: "var(--cream)",
-                borderColor: "var(--line)",
-                color: "var(--ink)",
-              }}
-            />
-            <button
-              className="px-5 py-2 text-sm font-medium whitespace-nowrap hover:opacity-90 transition-opacity"
-              style={{ background: "var(--accent)", color: "white", borderRadius: "8px" }}
-            >
-              Get Access
-            </button>
-          </div>
-          <p className="text-xs mt-3" style={{ color: "var(--muted-2)" }}>
-            Бесплатно на 14 дней. Без привязки карты.
-          </p>
+          <a
+            href="https://github.com/konst100/claude-ia"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-7 py-3 text-sm font-medium hover:opacity-90 transition-opacity"
+            style={{ background: "var(--ink)", color: "var(--cream)", borderRadius: "8px" }}
+          >
+            View on GitHub →
+          </a>
         </div>
       </section>
 
@@ -345,14 +339,19 @@ export default function Home() {
       <footer style={{ borderTop: "1px solid var(--line)" }}>
         <div className="max-w-5xl mx-auto px-6 py-7 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-2">
-            <span style={{ color: "var(--accent)", fontSize: "13px" }}>◆</span>
+            <LogoDiamond />
             <span className="font-semibold text-sm" style={{ color: "var(--ink)" }}>
               AI Ops Hub
             </span>
           </div>
-          <span className="text-xs" style={{ color: "var(--muted)" }}>
-            © 2026 AI Ops Hub. Платформа AI-функций для малого бизнеса.
-          </span>
+          <div className="text-right">
+            <p className="text-xs" style={{ color: "var(--muted)" }}>
+              © 2026 AI Ops Hub. AI platform for small business.
+            </p>
+            <p className="text-xs mt-0.5" style={{ color: "var(--muted-2)" }}>
+              This is a learning project — not a commercial product or service.
+            </p>
+          </div>
         </div>
       </footer>
     </div>
